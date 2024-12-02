@@ -5,8 +5,8 @@ use crate::tools::tools;
 pub fn part1() {
     let lines = tools::get_file_lines(PathBuf::from("./input/day01-part1.txt"));
 
-    let mut col_1: Vec<i32> = tools::extract_column_number_values(&lines, 0);
-    let mut col_2: Vec<i32> = tools::extract_column_number_values(&lines, 1);
+    let mut col_1: Vec<i32> = tools::lines_as_number_columns(&lines, 0);
+    let mut col_2: Vec<i32> = tools::lines_as_number_columns(&lines, 1);
 
     col_1.sort();
     col_2.sort();
@@ -25,8 +25,8 @@ pub fn part1() {
 pub fn part2() {
     let lines = tools::get_file_lines(PathBuf::from("./input/day01-part1.txt"));
 
-    let mut col_1: Vec<i32> = tools::extract_column_number_values(&lines, 0);
-    let mut col_2: Vec<i32> = tools::extract_column_number_values(&lines, 1);
+    let mut col_1: Vec<i32> = tools::lines_as_number_columns(&lines, 0);
+    let mut col_2: Vec<i32> = tools::lines_as_number_columns(&lines, 1);
 
     col_1.sort();
     col_2.sort();

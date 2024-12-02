@@ -15,7 +15,7 @@ pub fn get_file_lines(path: PathBuf) -> Vec<String> {
     return lines;
 }
 
-pub fn extract_column_number_values<T: FromStr>(lines: &Vec<String>, place: usize) -> Vec<T> {
+pub fn lines_as_number_columns<T: FromStr>(lines: &Vec<String>, place: usize) -> Vec<T> {
     let mut values = Vec::new();
 
     for line in lines {
