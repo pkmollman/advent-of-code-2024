@@ -12,7 +12,7 @@ trait Report {
 
 impl Report for Vec<i32> {
     fn is_in_bounds(&self) -> bool {
-        for i in 1..=self.len() - 1 {
+        for i in 1..self.len() {
             let diff = (self[i - 1] - self[i]).abs();
             if diff < 1 || diff > 3 {
                 return false;
@@ -23,7 +23,7 @@ impl Report for Vec<i32> {
 
     fn is_unidirectional(&self) -> bool {
         let dir = self[0] - self[1];
-        for i in 2..=self.len() - 1 {
+        for i in 2..self.len() {
             let dir1 = self[i - 1] - self[i];
             if (dir < 0 && dir1 > 0) || (dir > 0 && dir1 < 0) {
                 return false;
@@ -35,7 +35,7 @@ impl Report for Vec<i32> {
     fn lenient_iterations(&self) -> Vec<Vec<i32>> {
         let mut iterations = Vec::new();
 
-        for i in 0..=self.len() - 1 {
+        for i in 0..self.len() {
             let mut self_copy = self.clone();
             self_copy.remove(i);
             iterations.push(self_copy);
