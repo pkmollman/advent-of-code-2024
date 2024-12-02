@@ -49,7 +49,7 @@ impl Report for Vec<i32> {
     }
 
     fn is_safe_lenient(&self) -> bool {
-        if self.is_in_bounds() && self.is_unidirectional() {
+        if self.is_safe() {
             return true;
         }
 
