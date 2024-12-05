@@ -45,3 +45,20 @@ pub fn lines_as_number_rows<T: FromStr>(lines: &Vec<String>) -> Vec<Vec<T>> {
 
     return lines_with_values;
 }
+
+pub fn lines_as_columns(lines: &Vec<String>) -> Vec<Vec<char>> {
+    let mut columns: Vec<Vec<char>> = Vec::new();
+
+    for line in lines {
+        if columns.len() == 0 {
+            for _ in line.chars() {
+                columns.push(Vec::new());
+            }
+        }
+        for (i, char) in line.char_indices() {
+            columns[i].push(char);
+        }
+    }
+
+    return columns;
+}
